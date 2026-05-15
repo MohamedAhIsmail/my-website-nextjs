@@ -1,0 +1,7 @@
+{
+  "appName": "My Website",
+  "greeting": "Welcome",
+  "actions": {
+    "click": "Click here"
+  }
+}
