@@ -6,6 +6,9 @@ import { setRequestLocale } from "next-intl/server";
 import "../../styles/globals.css";
 import { cn } from "@/lib/utils";
 import { routing } from "@/i18n/routing";
+import { LanguageSwitcher } from "@/components/common/LanguageSwitcher";
+import { ThemeToggle } from "@/components/common/ThemeToggle";
+import { AppProviders } from "@/providers/app-providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -46,6 +49,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={dir}
+      suppressHydrationWarning
       className={cn(
         "h-full",
         "antialiased",
@@ -56,7 +60,15 @@ export default async function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <AppProviders>
+          <NextIntlClientProvider>
+            <header className="flex justify-end gap-2 px-4 py-3 border-b border-border">
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </header>
+            {children}
+          </NextIntlClientProvider>
+        </AppProviders>
       </body>
     </html>
   );
