@@ -15,12 +15,12 @@ export default function GlobalError({
 
   return (
     <html>
-      <body className="flex flex-col items-center justify-center min-h-screen gap-4 p-6 bg-background text-foreground">
-        <h2 className="text-xl font-semibold">Something went wrong</h2>
-        <p className="text-sm text-muted-foreground">{error.message}</p>
+      <body style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh", gap: 16, padding: 24, margin: 0, fontFamily: "system-ui, sans-serif", background: "#1a1c24", color: "#f5f5f8" }}>
+        <h2 style={{ margin: 0, fontSize: "1.25rem", fontWeight: 600 }}>Something went wrong</h2>
+        <p style={{ margin: 0, fontSize: "0.875rem", color: "#8a8fa8" }}>{error.message}</p>
         <button
           onClick={reset}
-          className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm"
+          style={{ padding: "10px 18px", borderRadius: 10, background: "#d4b896", color: "#3a2e24", border: "none", cursor: "pointer", fontWeight: 600 }}
         >
           Try again
         </button>
