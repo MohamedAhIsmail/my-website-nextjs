@@ -1,0 +1,20 @@
+[
+  {
+    "degree": "BSc in Computer Science",
+    "school": "University name",
+    "date": "2018 — 2022",
+    "bullets": [
+      "Focus on software engineering, algorithms and databases.",
+      "Graduated with honors; led the student dev community."
+    ]
+  },
+  {
+    "degree": "High school diploma",
+    "school": "School name",
+    "date": "2015 — 2018",
+    "bullets": [
+      "Science track with strong math and computing foundation.",
+      "Led coding club and competitive programming team."
+    ]
+  }
+]

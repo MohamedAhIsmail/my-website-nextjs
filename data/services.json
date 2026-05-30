@@ -1,0 +1,20 @@
+[
+  {
+    "icon": "code",
+    "title": "Frontend Development",
+    "desc": "Accessible, responsive interfaces with React and Next.js — fast, polished, and built to scale.",
+    "tags": ["React", "Next.js", "Tailwind", "shadcn/ui"]
+  },
+  {
+    "icon": "server",
+    "title": "Backend Development",
+    "desc": "Robust services and clean REST/GraphQL APIs with Node.js, Express and NestJS, modeled for growth.",
+    "tags": ["Node.js", "NestJS", "PostgreSQL", "MongoDB"]
+  },
+  {
+    "icon": "layers",
+    "title": "Full Stack Development",
+    "desc": "End-to-end product delivery — from data model to deployed UI — with one engineer owning the whole flow.",
+    "tags": ["TypeScript", "REST", "Auth", "CI/CD"]
+  }
+]

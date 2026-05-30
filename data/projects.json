@@ -1,0 +1,92 @@
+[
+  {
+    "name": "WorkRemote",
+    "glyph": "WR",
+    "cat": "Full Stack",
+    "badge": "Full Stack",
+    "desc": "A remote-job platform with advanced search, filters and real-time alerts.",
+    "tags": ["Next.js", "Node.js", "PostgreSQL"],
+    "live": "#",
+    "code": "#"
+  },
+  {
+    "name": "DevBoard",
+    "glyph": "DB",
+    "cat": "Full Stack",
+    "badge": "Full Stack",
+    "desc": "A team kanban + sprint tool with drag-and-drop boards and role-based access.",
+    "tags": ["React", "NestJS", "MongoDB"],
+    "live": "#",
+    "code": "#"
+  },
+  {
+    "name": "ShopCore API",
+    "glyph": "SC",
+    "cat": "Backend",
+    "badge": "Backend",
+    "desc": "A modular e-commerce backend: catalog, cart, payments and webhooks.",
+    "tags": ["NestJS", "PostgreSQL", "Stripe"],
+    "live": "#",
+    "code": "#"
+  },
+  {
+    "name": "Analytics Studio",
+    "glyph": "AS",
+    "cat": "Frontend",
+    "badge": "Frontend",
+    "desc": "A dashboard for product analytics with live charts and saved views.",
+    "tags": ["Next.js", "Tailwind", "Recharts"],
+    "live": "#",
+    "code": "#"
+  },
+  {
+    "name": "AuthKit",
+    "glyph": "AK",
+    "cat": "Backend",
+    "badge": "Backend",
+    "desc": "Drop-in authentication service: sessions, OAuth, magic links and 2FA.",
+    "tags": ["Node.js", "Express", "JWT"],
+    "live": "#",
+    "code": "#"
+  },
+  {
+    "name": "Portfolio CMS",
+    "glyph": "PC",
+    "cat": "Full Stack",
+    "badge": "Full Stack",
+    "desc": "A headless CMS that powers content, blog and SEO for marketing sites.",
+    "tags": ["Next.js", "MongoDB", "tRPC"],
+    "live": "#",
+    "code": "#"
+  },
+  {
+    "name": "Pixel UI",
+    "glyph": "PX",
+    "cat": "Frontend",
+    "badge": "Frontend",
+    "desc": "A component library and design tokens built on shadcn/ui primitives.",
+    "tags": ["React", "Tailwind", "shadcn/ui"],
+    "live": "#",
+    "code": "#"
+  },
+  {
+    "name": "TaskFlow",
+    "glyph": "TF",
+    "cat": "Full Stack",
+    "badge": "Full Stack",
+    "desc": "A productivity app with offline sync, reminders and team workspaces.",
+    "tags": ["Next.js", "Node.js", "PostgreSQL"],
+    "live": "#",
+    "code": "#"
+  },
+  {
+    "name": "Realtime Chat",
+    "glyph": "RC",
+    "cat": "Backend",
+    "badge": "Backend",
+    "desc": "A scalable WebSocket chat service with presence and message history.",
+    "tags": ["NestJS", "Socket.io", "Redis"],
+    "live": "#",
+    "code": "#"
+  }
+]

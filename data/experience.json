@@ -1,0 +1,36 @@
+[
+  {
+    "role": "Full Stack Software Engineer",
+    "company": "Company name",
+    "date": "2024 — Present",
+    "contract": "Full-time",
+    "bullets": [
+      "Build and ship full-stack features across React/Next.js frontends and Node.js services.",
+      "Improved key page load times and API latency through profiling and query optimization.",
+      "Led adoption of TypeScript and a shared component library to speed up delivery."
+    ],
+    "stack": ["Next.js", "NestJS", "PostgreSQL", "TypeScript"]
+  },
+  {
+    "role": "Backend Engineer",
+    "company": "Company name",
+    "date": "2023 — 2024",
+    "contract": "Contract",
+    "bullets": [
+      "Designed and maintained REST APIs and background jobs for a high-traffic product.",
+      "Modeled relational and document data and managed migrations safely in production."
+    ],
+    "stack": ["Node.js", "Express", "MongoDB", "Redis"]
+  },
+  {
+    "role": "Frontend Developer",
+    "company": "Company name",
+    "date": "2022 — 2023",
+    "contract": "Full-time",
+    "bullets": [
+      "Built responsive, accessible interfaces and reusable components with React.",
+      "Collaborated with design to turn Figma into pixel-accurate, performant UI."
+    ],
+    "stack": ["React", "Tailwind", "JavaScript"]
+  }
+]

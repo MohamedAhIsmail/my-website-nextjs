@@ -1,0 +1,15 @@
+[
+  { "name": "React",      "slug": "react",              "group": "Frontend" },
+  { "name": "Next.js",    "slug": "nextdotjs",          "group": "Frontend" },
+  { "name": "Tailwind",   "slug": "tailwindcss",        "group": "Frontend" },
+  { "name": "shadcn/ui",  "slug": "shadcnui",           "group": "Frontend" },
+  { "name": "Node.js",    "slug": "nodedotjs",          "group": "Backend"  },
+  { "name": "Express",    "slug": "express",            "group": "Backend"  },
+  { "name": "NestJS",     "slug": "nestjs",             "group": "Backend"  },
+  { "name": "PostgreSQL", "slug": "postgresql",         "group": "Data"     },
+  { "name": "MongoDB",    "slug": "mongodb",            "group": "Data"     },
+  { "name": "VS Code",    "slug": "visualstudiocode",   "group": "Tools",   "url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+  { "name": "GitHub",     "slug": "github",             "group": "Tools"    },
+  { "name": "Jira",       "slug": "jira",               "group": "Tools"    },
+  { "name": "Bitbucket",  "slug": "bitbucket",          "group": "Tools"    }
+]

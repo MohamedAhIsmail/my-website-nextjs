@@ -3,6 +3,7 @@ import { Rubik, Playfair_Display, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import { cn } from "@/lib/utils";
 import { AppProviders } from "@/providers/app-providers";
+import { Footer } from "@/components/Footer";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -27,20 +28,30 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mohamed Elsaka — Full Stack Software Engineer",
-  description: "Mohamed Elsaka — Full Stack Software Engineer from Egypt. React, Next.js, Node.js, NestJS, PostgreSQL & MongoDB.",
+  description:
+    "Mohamed Elsaka — Full Stack Software Engineer from Egypt. React, Next.js, Node.js, NestJS, PostgreSQL & MongoDB.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
       dir="ltr"
       suppressHydrationWarning
-      className={cn(rubik.variable, playfairDisplay.variable, geistMono.variable)}
+      className={cn(
+        rubik.variable,
+        playfairDisplay.variable,
+        geistMono.variable,
+      )}
     >
       <body>
         <AppProviders>
           {children}
+          <Footer />
         </AppProviders>
       </body>
     </html>

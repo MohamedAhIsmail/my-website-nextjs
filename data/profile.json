@@ -1,0 +1,16 @@
+{
+  "name": "Mohamed Elsaka",
+  "initials": "ME",
+  "role": "Software Engineer",
+  "location": "Cairo, Egypt",
+  "email": "mohamadahmed1k@gmail.com",
+  "about": [
+    "I'm Mohamed Elsaka, a full stack software engineer based in Egypt who builds fast, maintainable web products end to end — accessible React and Next.js interfaces on the frontend, and robust Node.js, Express and NestJS services backed by PostgreSQL and MongoDB on the backend, always with an eye on performance, clean architecture and code the next person can read."
+  ],
+  "roleRotation": [
+    "Full Stack Software Engineer",
+    "React & Next.js Developer",
+    "Node.js / NestJS Backend Engineer",
+    "I build scalable web products."
+  ]
+}

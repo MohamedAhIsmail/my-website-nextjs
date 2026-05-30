@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="bg-dots" />
+      <div className="bg-dots" aria-hidden="true" />
       <Preloader />
       <main>
         <Hero />
@@ -30,9 +30,6 @@ export default function Home() {
         <Certifications />
         <Contact />
       </main>
-      <footer className="foot">
-        <div className="wrap" />
-      </footer>
       <Dock />
       <ScrollTop />
     </>
