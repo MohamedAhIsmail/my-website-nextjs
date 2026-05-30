@@ -6,7 +6,6 @@ import { setRequestLocale } from "next-intl/server";
 import "../../styles/globals.css";
 import { cn } from "@/lib/utils";
 import { routing } from "@/i18n/routing";
-import { LanguageSwitcher } from "@/components/common/LanguageSwitcher";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { AppProviders } from "@/providers/app-providers";
 
@@ -43,7 +42,7 @@ export default async function RootLayout({
 
   setRequestLocale(locale);
 
-  const dir = locale === "ar" ? "rtl" : "ltr";
+  const dir = "ltr";
 
   return (
     <html
@@ -64,7 +63,6 @@ export default async function RootLayout({
           <NextIntlClientProvider>
             <header className="flex justify-end gap-2 px-4 py-3 border-b border-border">
               <ThemeToggle />
-              <LanguageSwitcher />
             </header>
             {children}
           </NextIntlClientProvider>
