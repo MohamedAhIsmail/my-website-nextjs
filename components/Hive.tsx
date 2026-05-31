@@ -46,10 +46,10 @@ export function Hive() {
 
   return (
     <section className="section wrap" id="stack">
-      <div className="section-head reveal" style={{ textAlign: "center", marginInline: "auto" }}>
-        <span className="eyebrow" style={{ justifyContent: "center" }}>Tech stack</span>
-        <h2>Tools I build with</h2>
-        <p style={{ marginInline: "auto" }}>A focused, battle-tested stack for shipping full-stack products fast.</p>
+      <div className="mb-[clamp(32px,5vw,56px)] text-center reveal">
+        <span className="eyebrow justify-center">Tech stack</span>
+        <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-3.5 mb-0">Tools I build with</h2>
+        <p className="text-muted-foreground mt-3 mb-0 text-body-lg mx-auto max-w-[56ch]">A focused, battle-tested stack for shipping full-stack products fast.</p>
       </div>
       <div className="hive-wrap" ref={ref}>
         <div className="hive">

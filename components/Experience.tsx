@@ -5,26 +5,31 @@ import { PORTFOLIO } from "@/lib/portfolio-data";
 export function Experience() {
   return (
     <section className="section wrap" id="experience">
-      <div className="section-head reveal">
+      <div className="mb-[clamp(32px,5vw,56px)] max-w-160 reveal">
         <span className="eyebrow">Experience</span>
-        <h2>Where I&apos;ve worked</h2>
-        <p>My journey across frontend, backend and full-stack roles.</p>
+        <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-3.5 mb-0">Where I&apos;ve worked</h2>
+        <p className="text-muted-foreground mt-3 mb-0 text-body-lg max-w-[56ch]">My journey across frontend, backend and full-stack roles.</p>
       </div>
-      <div className="timeline">
+
+      <div className="timeline relative max-w-205">
         {PORTFOLIO.experience.map((e, i) => (
-          <div className="tl-item reveal" key={i}>
+          <div key={i} className="reveal relative pl-9.5 pb-9 last:pb-0">
             <span className="tl-dot" />
-            <div className="tl-head">
-              <h3>{e.role}</h3>
-              <span className="tl-co">· {e.company}</span>
-              <span className="tl-date">{e.date}</span>
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h3 className="text-h3 font-[650] tracking-[-0.01em] m-0">{e.role}</h3>
+              <span className="text-primary font-[550]">· {e.company}</span>
+              <span className="font-mono text-sm text-muted-foreground ml-auto bg-accent px-2.5 py-0.75 rounded-full">{e.date}</span>
             </div>
-            <p className="tl-meta">{e.contract}</p>
-            <ul className="tl-bullets">
-              {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
+            <p className="text-muted-foreground text-sm mt-1 mb-0">{e.contract}</p>
+            <ul className="tl-bullets mt-3.5 p-0 list-none flex flex-col gap-2">
+              {e.bullets.map((b, j) => (
+                <li key={j} className="text-muted-foreground text-body">{b}</li>
+              ))}
             </ul>
-            <div className="tl-stack">
-              {e.stack.map((s) => <span key={s}>{s}</span>)}
+            <div className="flex flex-wrap gap-1.5 mt-3">
+              {e.stack.map((s) => (
+                <span key={s} className="font-mono text-[11px] text-muted-foreground border border-border px-2 py-0.5 rounded-md">{s}</span>
+              ))}
             </div>
           </div>
         ))}
