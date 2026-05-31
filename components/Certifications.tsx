@@ -1,22 +1,35 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { FadeIn } from "./FadeIn";
 import { PORTFOLIO } from "@/lib/portfolio-data";
+import { staggerContainer, cardItem, viewport } from "@/lib/motion";
 import { Icon } from "./icons";
 
 export function Certifications() {
   return (
     <section className="section wrap" id="certifications">
-      <div className="mb-[clamp(32px,5vw,56px)] max-w-160 reveal">
+      <FadeIn className="mb-[clamp(32px,5vw,56px)] max-w-160">
         <span className="eyebrow">Certifications</span>
         <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-3.5 mb-0">Always learning</h2>
-        <p className="text-muted-foreground mt-3 mb-0 text-body-lg max-w-[56ch]">Credentials that back up the work — placeholders for now, swap in your own anytime.</p>
-      </div>
+        <p className="text-muted-foreground mt-3 mb-0 text-body-lg max-w-[56ch]">
+          Credentials that back up the work — placeholders for now, swap in your own anytime.
+        </p>
+      </FadeIn>
 
-      <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]">
+      <motion.div
+        className="grid gap-3 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
+        variants={staggerContainer}
+        custom={0.08}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+      >
         {PORTFOLIO.certifications.map((c) => (
-          <div
+          <motion.div
             key={c.t}
-            className="reveal flex items-center gap-3.5 border border-border bg-card rounded-xl px-4 py-3.5 transition-[border-color,transform] duration-[180ms] hover:border-primary-line hover:translate-x-[3px]"
+            variants={cardItem}
+            className="flex items-center gap-3.5 border border-border bg-card rounded-xl px-4 py-3.5 transition-[border-color,transform] duration-180 hover:border-primary-line hover:translate-x-0.75"
           >
             <span className="w-10 h-10 rounded-[10px] grid place-items-center shrink-0 bg-primary-soft text-primary border border-primary-line [&_svg]:w-5 [&_svg]:h-5">
               <Icon name="award" />
@@ -25,9 +38,9 @@ export function Certifications() {
               <div className="font-semibold text-body">{c.t}</div>
               <div className="text-muted-foreground text-sm">{c.s}</div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

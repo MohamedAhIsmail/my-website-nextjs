@@ -1,7 +1,10 @@
 "use client";
 
 import type { MouseEvent } from "react";
+import { motion } from "framer-motion";
+import { FadeIn } from "./FadeIn";
 import { PORTFOLIO } from "@/lib/portfolio-data";
+import { staggerContainer, cardItem, viewport } from "@/lib/motion";
 import { Icon } from "./icons";
 
 export function Services() {
@@ -13,27 +16,41 @@ export function Services() {
 
   return (
     <section className="section wrap" id="services">
-      <div className="mb-[clamp(32px,5vw,56px)] max-w-[640px] reveal">
+      <FadeIn className="mb-[clamp(32px,5vw,56px)] max-w-160">
         <span className="eyebrow">Services</span>
-        <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-[14px] mb-0">What I can do for you</h2>
-        <p className="text-muted-foreground mt-3 mb-0 text-body-lg max-w-[56ch]">End-to-end engineering, from the database to the pixels — pick a piece or the whole thing.</p>
-      </div>
-      <div className="grid gap-[26px] [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]">
+        <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-3.5 mb-0">What I can do for you</h2>
+        <p className="text-muted-foreground mt-3 mb-0 text-body-lg max-w-[56ch]">
+          End-to-end engineering, from the database to the pixels — pick a piece or the whole thing.
+        </p>
+      </FadeIn>
+
+      <motion.div
+        className="grid gap-6.5 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+      >
         {PORTFOLIO.services.map((s) => (
-          <article className="service-card reveal" key={s.title} onMouseMove={onMove}>
-            <div className="w-[46px] h-[46px] rounded-xl grid place-items-center bg-primary-soft text-primary border border-primary-line mb-[18px] [&_svg]:w-[23px] [&_svg]:h-[23px]">
+          <motion.article
+            key={s.title}
+            variants={cardItem}
+            className="service-card"
+            onMouseMove={onMove}
+          >
+            <div className="w-11.5 h-11.5 rounded-xl grid place-items-center bg-primary-soft text-primary border border-primary-line mb-4.5 [&_svg]:w-5.75 [&_svg]:h-5.75">
               <Icon name={s.icon as never} />
             </div>
             <h3 className="text-h3 font-[650] tracking-[-0.01em] mt-0 mb-2">{s.title}</h3>
             <p className="text-muted-foreground m-0 text-body">{s.desc}</p>
             <div className="flex flex-wrap gap-1.5 mt-4">
               {s.tags.map((t) => (
-                <span key={t} className="font-mono text-caption text-muted-foreground bg-accent px-2 py-[3px] rounded-md">{t}</span>
+                <span key={t} className="font-mono text-caption text-muted-foreground bg-accent px-2 py-0.75 rounded-md">{t}</span>
               ))}
             </div>
-          </article>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

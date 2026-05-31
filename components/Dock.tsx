@@ -2,27 +2,29 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
 import { Icon } from "./icons";
 
 const DOCK_ITEMS = [
-  { id: "top", label: "Home", icon: "home" },
-  { id: "services", label: "Services", icon: "briefcase" },
-  { id: "stack", label: "Stack", icon: "grid" },
-  { id: "projects", label: "Projects", icon: "folder" },
-  { id: "experience", label: "Experience", icon: "clock" },
-  { id: "education", label: "Education", icon: "graduation" },
+  { id: "top",        label: "Home",       icon: "home"       },
+  { id: "services",   label: "Services",   icon: "briefcase"  },
+  { id: "stack",      label: "Stack",      icon: "grid"       },
+  { id: "projects",   label: "Projects",   icon: "folder"     },
+  { id: "experience", label: "Experience", icon: "clock"      },
+  { id: "education",  label: "Education",  icon: "graduation" },
 ] as const;
 
 export function Dock() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [active, setActive] = useState("top");
-  const [hover, setHover] = useState<string | null>(null);
-  const [bub, setBub] = useState({ left: 0, top: 0, w: 0, h: 0, on: false });
+  const [mounted, setMounted]     = useState(false);
+  const [active, setActive]       = useState("top");
+  const [hover, setHover]         = useState<string | null>(null);
+  const [bub, setBub]             = useState({ x: 0, y: 0, w: 0, h: 0, on: false });
   const btnRefs = useRef<Record<string, HTMLElement | null>>({});
 
   useEffect(() => { setMounted(true); }, []);
 
+  /* scroll-spy */
   useEffect(() => {
     const ids = [...DOCK_ITEMS.map((d) => d.id), "contact"];
     const onScroll = () => {
@@ -44,12 +46,13 @@ export function Dock() {
     };
   }, []);
 
+  /* bubble position */
   useEffect(() => {
     const place = () => {
       const key = hover ?? (DOCK_ITEMS.some((d) => d.id === active) ? active : null);
       const el = key ? btnRefs.current[key] : null;
       if (el) {
-        setBub({ left: el.offsetLeft, top: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight, on: true });
+        setBub({ x: el.offsetLeft, y: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight, on: true });
       } else {
         setBub((b) => ({ ...b, on: false }));
       }
@@ -68,16 +71,20 @@ export function Dock() {
 
   return (
     <nav className="dock" aria-label="Primary" onMouseLeave={() => setHover(null)}>
-      <span
+      {/* Spring-animated bubble */}
+      <motion.span
         className="dock-bubble"
         aria-hidden="true"
-        style={{
-          transform: `translate(${bub.left}px, ${bub.top}px)`,
-          width: bub.w,
-          height: bub.h,
-          opacity: bub.on ? 1 : 0,
+        animate={{ x: bub.x, y: bub.y, width: bub.w, height: bub.h, opacity: bub.on ? 1 : 0 }}
+        transition={{
+          x:       { type: "spring", stiffness: 500, damping: 35, mass: 0.5 },
+          y:       { type: "spring", stiffness: 500, damping: 35, mass: 0.5 },
+          width:   { type: "spring", stiffness: 500, damping: 35, mass: 0.5 },
+          height:  { duration: 0.25 },
+          opacity: { duration: 0.2 },
         }}
       />
+
       {DOCK_ITEMS.map((d) => (
         <a
           key={d.id}
@@ -91,7 +98,9 @@ export function Dock() {
           <Icon name={d.icon} />
         </a>
       ))}
+
       <span className="dock-sep" />
+
       <button
         className="dock-btn"
         ref={(el) => { btnRefs.current.theme = el; }}
@@ -102,6 +111,7 @@ export function Dock() {
       >
         <Icon name={isDark ? "sun" : "moon"} />
       </button>
+
       <a
         href="#contact"
         onMouseEnter={() => setHover(null)}

@@ -1,6 +1,5 @@
 "use client";
 
-import { useReveal } from "@/hooks/use-reveal";
 import { Preloader } from "@/components/Preloader";
 import { Dock } from "@/components/Dock";
 import { Hero } from "@/components/Hero";
@@ -14,8 +13,6 @@ import { Contact } from "@/components/Contact";
 import { ScrollTop } from "@/components/ScrollTop";
 
 export default function Home() {
-  useReveal();
-
   return (
     <>
       <div className="bg-dots" aria-hidden="true" />
