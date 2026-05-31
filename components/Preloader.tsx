@@ -93,9 +93,12 @@ export function Preloader() {
                   stroke="currentColor"
                   strokeWidth="2.4"
                   strokeLinecap="round"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.3, ease: "easeInOut", delay: 1.7 }}
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: 1, opacity: 1 }}
+                  transition={{
+                    pathLength: { duration: 1.3, ease: "easeInOut", delay: 1.7 },
+                    opacity: { duration: 0, delay: 1.7 },
+                  }}
                 />
                 <motion.path
                   d="M104 58 L124 74 L104 90"

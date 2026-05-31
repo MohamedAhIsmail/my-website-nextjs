@@ -43,5 +43,7 @@ export const PORTFOLIO = {
 };
 
 export function getIconUrl(tech: TechItem): string {
-  return tech.url ?? `https://cdn.simpleicons.org/${tech.slug}/3b82f6`;
+  if (tech.url) return tech.url;
+  const color = tech.color ?? "888888";
+  return `https://cdn.simpleicons.org/${tech.slug}/${color}`;
 }

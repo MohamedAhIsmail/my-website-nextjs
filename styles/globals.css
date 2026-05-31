@@ -75,8 +75,7 @@
   --font-sans:
     var(--font-rubik), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, sans-serif;
-  --font-mono:
-    var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-mono: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
 
   --text-h1: clamp(1.9rem, 1.3rem + 2vw, 2.6rem);
@@ -331,7 +330,6 @@ body {
   width: clamp(26px, calc(var(--hex-w) * 0.36), 38px);
   height: clamp(26px, calc(var(--hex-w) * 0.36), 38px);
   object-fit: contain;
-  filter: brightness(0) invert(0.16);
   transition: transform 0.22s ease;
 }
 .dark .hex .tech-ic {
@@ -346,21 +344,13 @@ body {
   padding-inline: 4px;
   transition: color 0.22s ease;
 }
-.hex:hover .hex-inner {
-  transform: scale(1.04);
-  background: var(--primary-soft);
-}
-.hex:hover::before {
-  background: var(--primary);
-}
-.hex:hover .tech-ic {
-  transform: translateY(-1px) scale(1.08);
-}
-/* Light hover: fill hex solid + white icon/label */
-.hex:hover .hex-inner { background: var(--primary); }
-.hex:hover .tech-ic   { filter: brightness(0) invert(1); }
+/* Hover: scale hex, fill with primary */
+.hex:hover .hex-inner { transform: scale(1.04); background: var(--primary); }
+.hex:hover::before    { background: var(--primary); }
+/* On hover: turn icon white for contrast against sand fill */
+.hex:hover .tech-ic   { transform: translateY(-1px) scale(1.08); filter: brightness(0) invert(1); transition: transform 0.22s ease, filter 0.18s ease; }
 .hex:hover .tech-label { color: #fff; }
-/* Dark hover: soft fill, keep white icon */
+/* Dark mode hover: soft fill (icon is already white) */
 .dark .hex:hover .hex-inner { background: var(--primary-soft); }
 .dark .hex:hover .tech-ic   { filter: brightness(0) invert(1); }
 

@@ -3,6 +3,7 @@ export interface TechItem {
   slug: string;
   group: string;
   url?: string;
+  color?: string;
 }
 
 export interface ProjectItem {

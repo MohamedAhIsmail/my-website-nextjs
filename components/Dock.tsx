@@ -111,16 +111,6 @@ export function Dock() {
       >
         <Icon name={isDark ? "sun" : "moon"} />
       </button>
-
-      <a
-        href="#contact"
-        onMouseEnter={() => setHover(null)}
-        className={"dock-btn dock-cta" + (active === "contact" ? " active" : "")}
-        data-tip="Get in touch"
-        aria-label="Get in touch"
-      >
-        <Icon name="send" />
-      </a>
     </nav>
   );
 }

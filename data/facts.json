@@ -1,5 +1,4 @@
 [
   { "k": "Location", "v": "Cairo, Egypt", "icon": "pin" },
-  { "k": "Experience", "v": "2 years", "icon": "clock" },
-  { "k": "Focus", "v": "Full Stack Web", "icon": "layers" }
+  { "k": "Experience", "v": "2 years", "icon": "clock" }
 ]

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Rubik, Playfair_Display, Geist_Mono } from "next/font/google";
+import { Rubik, Playfair_Display } from "next/font/google";
 import "../styles/globals.css";
 import { cn } from "@/lib/utils";
 import { AppProviders } from "@/providers/app-providers";
@@ -20,12 +20,6 @@ const playfairDisplay = Playfair_Display({
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: "Mohamed Elsaka — Full Stack Software Engineer",
   description:
@@ -42,13 +36,9 @@ export default function RootLayout({
       lang="en"
       dir="ltr"
       suppressHydrationWarning
-      className={cn(
-        rubik.variable,
-        playfairDisplay.variable,
-        geistMono.variable,
-      )}
+      className={cn(rubik.variable, playfairDisplay.variable)}
     >
-      <body>
+      <body suppressHydrationWarning>
         <AppProviders>
           {children}
           <Footer />
