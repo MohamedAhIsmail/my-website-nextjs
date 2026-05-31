@@ -8,7 +8,7 @@ import { fadeUp, viewport } from "@/lib/motion";
 export function Education() {
   return (
     <section className="section wrap" id="education">
-      <FadeIn className="mb-[clamp(32px,5vw,56px)] max-w-160">
+      <FadeIn className="mb-10 max-w-160">
         <span className="eyebrow">Education</span>
         <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-3.5 mb-0">Foundations</h2>
         <p className="text-muted-foreground mt-3 mb-0 text-body-lg max-w-[56ch]">Where I built my computer-science and engineering fundamentals.</p>

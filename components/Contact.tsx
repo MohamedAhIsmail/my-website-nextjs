@@ -9,7 +9,7 @@ export function Contact() {
   return (
     <section className="section wrap" id="contact">
       <motion.div
-        className="contact-card border border-border bg-card rounded-[22px] p-[clamp(32px,6vw,64px)] text-center relative overflow-hidden"
+        className="contact-card border border-border bg-card rounded-[22px] p-10 text-center relative overflow-hidden"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"

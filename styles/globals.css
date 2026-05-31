@@ -87,7 +87,7 @@
   --text-caption: 0.75rem;
 
   --maxw: 1040px;
-  --gutter: clamp(20px, 5vw, 56px);
+  --gutter: 24px;
 }
 
 /* ============================================================
@@ -209,7 +209,7 @@ body {
   padding-inline: var(--gutter);
 }
 .section {
-  padding-block: clamp(32px, 4vw, 48px);
+  padding-block: 40px;
   position: relative;
 }
 
