@@ -40,7 +40,7 @@ export function Hive() {
         </p>
       </FadeIn>
 
-      <div className="hive-wrap">
+      <div className="flex justify-center">
         <div className="hive">
           {rows.map((row, ri) => (
             <div className={"hive-row" + (ri % 2 === 0 ? " indent" : "")} key={ri}>

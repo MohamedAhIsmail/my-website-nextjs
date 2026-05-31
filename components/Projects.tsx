@@ -18,7 +18,7 @@ export function Projects() {
       </FadeIn>
 
       <motion.div
-        className="proj-grid grid grid-cols-3 gap-6.5"
+        className="grid gap-6.5 grid-cols-1 min-[720px]:grid-cols-2 min-[920px]:grid-cols-3"
         variants={staggerContainer}
         custom={0.07}
         initial="hidden"
