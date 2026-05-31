@@ -24,32 +24,17 @@ const playfairDisplay = Playfair_Display({
   display: "swap",
 });
 
-const title = `${profile.name} — ${profile.role}`;
-const description = `${profile.about[0]}`;
-
 export const metadata: Metadata = {
   metadataBase: new URL(seo.url),
 
   title: {
-    default: title,
+    default:  seo.title,
     template: `%s | ${profile.name}`,
   },
 
-  description,
+  description: seo.description,
 
-  keywords: [
-    "Software Engineer",
-    "React Developer",
-    "Next.js Developer",
-    "Node.js Developer",
-    "NestJS",
-    "TypeScript",
-    "PostgreSQL",
-    "MongoDB",
-    "Web Developer Egypt",
-    "Cairo Developer",
-    profile.name,
-  ],
+  keywords: seo.keywords,
 
   authors: [{ name: profile.name }],
   creator: profile.name,
@@ -60,22 +45,22 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: seo.url,
     siteName: profile.name,
-    title,
-    description,
+    title:       seo.title,
+    description: seo.description,
     images: [
       {
         url: seo.ogImage,
         width: 1200,
         height: 630,
-        alt: `${profile.name} — ${profile.role}`,
+        alt: seo.title,
       },
     ],
   },
 
   twitter: {
-    card: "summary_large_image",
-    title,
-    description,
+    card:        "summary_large_image",
+    title:       seo.title,
+    description: seo.description,
     creator: seo.twitterHandle,
     images: [seo.ogImage],
   },
@@ -129,7 +114,7 @@ export default function RootLayout({
           url={seo.url}
           name={profile.name}
           role={profile.role}
-          description={description}
+          description={seo.description}
           location={profile.location}
           email={profile.email}
           githubUrl={githubUrl}

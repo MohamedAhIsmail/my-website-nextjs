@@ -2,5 +2,22 @@
   "url": "https://mohamedelsaka.com",
   "twitterHandle": "@",
   "googleVerification": "replace-with-google-search-console-verification-code",
-  "ogImage": "/og-image.png"
+  "ogImage": "/og-image.png",
+
+  "title": "Mohamed Elsaka — Full Stack Developer",
+  "description": "Full Stack Software Engineer based in Cairo, Egypt. Specialising in React, Next.js, Node.js and NestJS — building fast, scalable web products end to end.",
+  "keywords": [
+    "Full Stack Software Engineer",
+    "React Developer",
+    "Next.js Developer",
+    "Node.js Developer",
+    "NestJS Engineer",
+    "TypeScript Developer",
+    "PostgreSQL",
+    "MongoDB",
+    "Web Developer Egypt",
+    "Cairo Developer",
+    "Software Engineer Cairo",
+    "Mohamed Elsaka"
+  ]
 }
