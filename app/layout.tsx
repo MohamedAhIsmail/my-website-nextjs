@@ -81,12 +81,6 @@ export const metadata: Metadata = {
     canonical: seo.url,
   },
 
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-
   verification: {
     google: seo.googleVerification,
   },
