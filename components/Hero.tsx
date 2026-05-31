@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { PORTFOLIO } from "@/lib/portfolio-data";
 import { EASE, staggerContainer, cardItem, hoverTransition } from "@/lib/motion";
 import { Icon, SocialIcon } from "./icons";
@@ -23,11 +24,12 @@ export function Hero() {
       <div className="w-full text-center">
 
         <motion.div className="flex justify-center mb-6" {...heroItem(0)}>
-          <img
+          <Image
             src="/image.jpg"
-            alt="Mohamed Elsaka"
+            alt="Mohamed Elsaka — Full Stack Software Engineer"
             width={148}
             height={148}
+            priority
             className="w-37 h-37 rounded-full border border-border shadow-md bg-card outline-4 outline-primary-soft outline-offset-[5px]"
           />
         </motion.div>
@@ -95,14 +97,14 @@ export function Hero() {
           <motion.a
             href="#projects"
             whileHover={{ y: -2, transition: hoverTransition }}
-            className="inline-flex items-center gap-2 font-semibold text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap bg-primary text-primary-foreground transition-[background-color,color,box-shadow] duration-200 ease-out hover:bg-primary-strong [&_svg]:w-4 [&_svg]:h-4"
+            className="inline-flex items-center gap-2 font-medium text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap bg-primary text-primary-foreground transition-[background-color,color,box-shadow] duration-200 ease-out hover:bg-primary-strong [&_svg]:w-4 [&_svg]:h-4"
           >
             <Icon name="layers" /> View my work
           </motion.a>
           <motion.a
             href="#contact"
             whileHover={{ y: -2, transition: hoverTransition }}
-            className="inline-flex items-center gap-2 font-semibold text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap bg-card text-foreground border border-border transition-[background-color,border-color,color] duration-200 ease-out hover:bg-accent hover:border-muted-foreground [&_svg]:w-4 [&_svg]:h-4"
+            className="inline-flex items-center gap-2 font-medium text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap bg-card text-foreground border border-border transition-[background-color,border-color,color] duration-200 ease-out hover:bg-accent hover:border-muted-foreground [&_svg]:w-4 [&_svg]:h-4"
           >
             <Icon name="calendar" /> Schedule a call
           </motion.a>

@@ -124,7 +124,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(rubik.variable, playfairDisplay.variable)}
     >
-      <head>
+      <body suppressHydrationWarning>
         <JsonLd
           url={seo.url}
           name={profile.name}
@@ -136,8 +136,6 @@ export default function RootLayout({
           linkedinUrl={linkedinUrl}
           image={`${seo.url}${seo.ogImage}`}
         />
-      </head>
-      <body suppressHydrationWarning>
         <AppProviders>
           {children}
           <Footer />

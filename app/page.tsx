@@ -1,5 +1,3 @@
-"use client";
-
 import { Preloader } from "@/components/Preloader";
 import { Dock } from "@/components/Dock";
 import { Hero } from "@/components/Hero";
