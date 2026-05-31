@@ -26,7 +26,7 @@ export function Hero() {
         <motion.div className="flex justify-center mb-6" {...heroItem(0)}>
           <Image
             src="/image.jpg"
-            alt="Mohamed Elsaka — Full Stack Software Engineer"
+            alt="Mohamed Elsaka — Full Stack Developer"
             width={148}
             height={148}
             priority

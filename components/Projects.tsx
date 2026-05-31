@@ -13,7 +13,7 @@ export function Projects() {
         <span className="eyebrow">Projects</span>
         <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-3.5 mb-0">Selected work</h2>
         <p className="text-muted-foreground mt-3 mb-0 text-body-lg max-w-[56ch]">
-          A few things I&apos;ve built — placeholders for now, swap in your real projects anytime.
+          A selection of projects I&apos;ve designed, built and shipped — spanning full-stack products, backend services and frontend applications.
         </p>
       </FadeIn>
 

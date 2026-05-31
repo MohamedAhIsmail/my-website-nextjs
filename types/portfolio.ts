@@ -22,6 +22,8 @@ export interface ExperienceItem {
   company: string;
   date: string;
   contract: string;
+  workType: "Remote" | "On-site" | "Hybrid";
+  location: string;
   bullets: string[];
   stack: string[];
 }

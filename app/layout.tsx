@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   description,
 
   keywords: [
-    "Full Stack Software Engineer",
+    "Software Engineer",
     "React Developer",
     "Next.js Developer",
     "Node.js Developer",

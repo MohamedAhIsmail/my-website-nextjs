@@ -31,7 +31,13 @@ export function Experience() {
               <span className="text-primary font-[550]">· {e.company}</span>
               <span className="font-mono text-sm text-muted-foreground ml-auto bg-accent px-2.5 py-0.75 rounded-full">{e.date}</span>
             </div>
-            <p className="text-muted-foreground text-sm mt-1 mb-0">{e.contract}</p>
+            <p className="text-muted-foreground text-sm mt-1 mb-0 flex flex-wrap items-center gap-x-2 gap-y-0.5">
+              <span>{e.contract}</span>
+              <span className="text-border">·</span>
+              <span>{e.workType}</span>
+              <span className="text-border">·</span>
+              <span>{e.location}</span>
+            </p>
             <ul className="tl-bullets mt-3.5 p-0 list-none flex flex-col gap-2">
               {e.bullets.map((b, j) => <li key={j} className="text-muted-foreground text-body">{b}</li>)}
             </ul>

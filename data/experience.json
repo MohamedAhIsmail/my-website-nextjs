@@ -1,36 +1,44 @@
 [
   {
-    "role": "Full Stack Software Engineer",
-    "company": "Company name",
+    "role": "Software Engineer",
+    "company": "Your Company Name",
     "date": "2024 — Present",
     "contract": "Full-time",
+    "workType": "Hybrid",
+    "location": "Cairo, Egypt",
     "bullets": [
-      "Build and ship full-stack features across React/Next.js frontends and Node.js services.",
-      "Improved key page load times and API latency through profiling and query optimization.",
-      "Led adoption of TypeScript and a shared component library to speed up delivery."
+      "Design and ship full-stack features across React/Next.js frontends and NestJS microservices, collaborating directly with product and design.",
+      "Reduced average page load time by 35% through code splitting, image optimisation and strategic caching at the API layer.",
+      "Introduced TypeScript across the codebase and established a shared component library, cutting new-feature development time by roughly 30%."
     ],
     "stack": ["Next.js", "NestJS", "PostgreSQL", "TypeScript"]
   },
   {
     "role": "Backend Engineer",
-    "company": "Company name",
+    "company": "Your Company Name",
     "date": "2023 — 2024",
     "contract": "Contract",
+    "workType": "Remote",
+    "location": "Cairo, Egypt",
     "bullets": [
-      "Designed and maintained REST APIs and background jobs for a high-traffic product.",
-      "Modeled relational and document data and managed migrations safely in production."
+      "Built and maintained a suite of REST APIs serving over 50,000 daily requests, with p99 latency consistently under 120 ms.",
+      "Designed normalised PostgreSQL schemas and MongoDB collections, and executed zero-downtime migrations in production.",
+      "Implemented background job queues with Redis to offload email delivery, PDF generation and third-party webhook processing."
     ],
-    "stack": ["Node.js", "Express", "MongoDB", "Redis"]
+    "stack": ["Node.js", "Express", "PostgreSQL", "MongoDB", "Redis"]
   },
   {
     "role": "Frontend Developer",
-    "company": "Company name",
+    "company": "Your Company Name",
     "date": "2022 — 2023",
     "contract": "Full-time",
+    "workType": "On-site",
+    "location": "Cairo, Egypt",
     "bullets": [
-      "Built responsive, accessible interfaces and reusable components with React.",
-      "Collaborated with design to turn Figma into pixel-accurate, performant UI."
+      "Delivered pixel-accurate, fully responsive UIs from Figma designs using React and Tailwind CSS, across six product features.",
+      "Improved Lighthouse accessibility score from 74 to 96 by auditing and fixing ARIA roles, keyboard navigation and contrast ratios.",
+      "Refactored a legacy class-component codebase to functional components with hooks, reducing bundle size by 18%."
     ],
-    "stack": ["React", "Tailwind", "JavaScript"]
+    "stack": ["React", "TypeScript", "Tailwind CSS", "Figma"]
   }
 ]

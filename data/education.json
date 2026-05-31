@@ -1,20 +1,20 @@
 [
   {
     "degree": "BSc in Computer Science",
-    "school": "University name",
+    "school": "Your University Name",
     "date": "2018 — 2022",
     "bullets": [
-      "Focus on software engineering, algorithms and databases.",
-      "Graduated with honors; led the student dev community."
+      "Specialised in software engineering, data structures, algorithms and database systems.",
+      "Graduated with honours and led the faculty's developer community, organising four hackathons."
     ]
   },
   {
-    "degree": "High school diploma",
-    "school": "School name",
+    "degree": "High School Diploma — Science Track",
+    "school": "Your School Name",
     "date": "2015 — 2018",
     "bullets": [
-      "Science track with strong math and computing foundation.",
-      "Led coding club and competitive programming team."
+      "Strong foundation in mathematics, physics and computer science fundamentals.",
+      "Founded and led the school coding club, introducing peers to web development."
     ]
   }
 ]

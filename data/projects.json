@@ -4,7 +4,7 @@
     "glyph": "WR",
     "cat": "Full Stack",
     "badge": "Full Stack",
-    "desc": "A remote-job platform with advanced search, filters and real-time alerts.",
+    "desc": "Job board platform for remote roles with smart filters, saved searches, and real-time email alerts when new listings match your criteria.",
     "tags": ["Next.js", "Node.js", "PostgreSQL"],
     "live": "#",
     "code": "#"
@@ -14,7 +14,7 @@
     "glyph": "DB",
     "cat": "Full Stack",
     "badge": "Full Stack",
-    "desc": "A team kanban + sprint tool with drag-and-drop boards and role-based access.",
+    "desc": "Team project management tool with drag-and-drop Kanban boards, sprint planning, and granular role-based access control.",
     "tags": ["React", "NestJS", "MongoDB"],
     "live": "#",
     "code": "#"
@@ -24,7 +24,7 @@
     "glyph": "SC",
     "cat": "Backend",
     "badge": "Backend",
-    "desc": "A modular e-commerce backend: catalog, cart, payments and webhooks.",
+    "desc": "Modular e-commerce REST API covering product catalogue, cart management, Stripe checkout, and webhook event handling.",
     "tags": ["NestJS", "PostgreSQL", "Stripe"],
     "live": "#",
     "code": "#"
@@ -34,7 +34,7 @@
     "glyph": "AS",
     "cat": "Frontend",
     "badge": "Frontend",
-    "desc": "A dashboard for product analytics with live charts and saved views.",
+    "desc": "Interactive dashboard for product analytics — live time-series charts, funnel visualisation, and persistent custom-view configurations.",
     "tags": ["Next.js", "Tailwind", "Recharts"],
     "live": "#",
     "code": "#"
@@ -44,17 +44,17 @@
     "glyph": "AK",
     "cat": "Backend",
     "badge": "Backend",
-    "desc": "Drop-in authentication service: sessions, OAuth, magic links and 2FA.",
+    "desc": "Plug-and-play authentication service supporting JWT sessions, Google OAuth, passwordless magic links and TOTP-based 2FA.",
     "tags": ["Node.js", "Express", "JWT"],
     "live": "#",
     "code": "#"
   },
   {
-    "name": "Portfolio CMS",
-    "glyph": "PC",
+    "name": "ContentBase CMS",
+    "glyph": "CB",
     "cat": "Full Stack",
     "badge": "Full Stack",
-    "desc": "A headless CMS that powers content, blog and SEO for marketing sites.",
+    "desc": "Headless CMS with a rich-text editor, asset management, localisation support and a typed tRPC API consumed by Next.js frontends.",
     "tags": ["Next.js", "MongoDB", "tRPC"],
     "live": "#",
     "code": "#"
@@ -64,7 +64,7 @@
     "glyph": "PX",
     "cat": "Frontend",
     "badge": "Frontend",
-    "desc": "A component library and design tokens built on shadcn/ui primitives.",
+    "desc": "Open-source component library with design tokens, dark-mode support and full accessibility built on shadcn/ui primitives.",
     "tags": ["React", "Tailwind", "shadcn/ui"],
     "live": "#",
     "code": "#"
@@ -74,7 +74,7 @@
     "glyph": "TF",
     "cat": "Full Stack",
     "badge": "Full Stack",
-    "desc": "A productivity app with offline sync, reminders and team workspaces.",
+    "desc": "Cross-platform productivity app with offline-first sync, push reminders, recurring tasks and shared team workspaces.",
     "tags": ["Next.js", "Node.js", "PostgreSQL"],
     "live": "#",
     "code": "#"
@@ -84,7 +84,7 @@
     "glyph": "RC",
     "cat": "Backend",
     "badge": "Backend",
-    "desc": "A scalable WebSocket chat service with presence and message history.",
+    "desc": "Scalable WebSocket chat service with presence indicators, read receipts, persistent message history and horizontal scaling via Redis pub/sub.",
     "tags": ["NestJS", "Socket.io", "Redis"],
     "live": "#",
     "code": "#"
