@@ -3,7 +3,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { PORTFOLIO } from "@/lib/portfolio-data";
-import { EASE, staggerContainer, cardItem, hoverTransition } from "@/lib/motion";
+import {
+  EASE,
+  staggerContainer,
+  cardItem,
+  hoverTransition,
+} from "@/lib/motion";
 import { Icon, SocialIcon } from "./icons";
 
 /* Each hero element slides up on page load */
@@ -22,7 +27,6 @@ export function Hero() {
       className="wrap min-h-screen flex items-center justify-center pt-8 pb-28"
     >
       <div className="w-full text-center">
-
         <motion.div className="flex justify-center mb-6" {...heroItem(0)}>
           <Image
             src="/image.jpg"
@@ -48,14 +52,21 @@ export function Hero() {
           {PORTFOLIO.role}
         </motion.p>
 
-        <motion.div className="flex gap-2.5 mt-5 justify-center" {...heroItem(0.26)}>
+        <motion.div
+          className="flex gap-2.5 mt-5 justify-center"
+          {...heroItem(0.26)}
+        >
           {PORTFOLIO.socials.map((s) => (
             <motion.a
               key={s.id}
               href={s.href}
               aria-label={s.label}
               title={s.label}
-              target={s.href.startsWith("#") || s.href.startsWith("mailto:") ? undefined : "_blank"}
+              target={
+                s.href.startsWith("#") || s.href.startsWith("mailto:")
+                  ? undefined
+                  : "_blank"
+              }
               rel="noreferrer"
               whileHover={{ y: -2, transition: hoverTransition }}
               className="w-10 h-10 grid place-items-center rounded-[10px] border border-border bg-card text-muted-foreground transition-[color,border-color,background-color] duration-200 ease-out hover:text-primary hover:border-primary-line hover:bg-primary-soft [&_svg]:w-4.5 [&_svg]:h-4.5"
@@ -67,7 +78,12 @@ export function Hero() {
 
         <motion.div className="mt-6 max-w-175 mx-auto" {...heroItem(0.34)}>
           {PORTFOLIO.about.map((p, i) => (
-            <p key={i} className="text-muted-foreground text-body leading-relaxed m-0">{p}</p>
+            <p
+              key={i}
+              className="text-muted-foreground text-body leading-relaxed m-0"
+            >
+              {p}
+            </p>
           ))}
         </motion.div>
 
@@ -85,7 +101,9 @@ export function Hero() {
               variants={cardItem}
               className="border border-border bg-card rounded-xl p-4 text-center"
             >
-              <div className="text-muted-foreground text-caption font-mono uppercase tracking-[0.08em]">{f.k}</div>
+              <div className="text-muted-foreground text-caption font-mono uppercase tracking-[0.08em]">
+                {f.k}
+              </div>
               <div className="font-semibold text-sm mt-1.5 flex items-center justify-center gap-2 [&_svg]:w-4 [&_svg]:h-4 [&_svg]:text-primary">
                 <Icon name={f.icon as never} /> {f.v}
               </div>
@@ -93,7 +111,10 @@ export function Hero() {
           ))}
         </motion.div>
 
-        <motion.div className="flex flex-wrap gap-3 mt-7 justify-center" {...heroItem(0.55)}>
+        <motion.div
+          className="flex flex-wrap gap-3 mt-7 justify-center"
+          {...heroItem(0.55)}
+        >
           <motion.a
             href="#projects"
             whileHover={{ y: -2, transition: hoverTransition }}
@@ -109,7 +130,6 @@ export function Hero() {
             <Icon name="calendar" /> Schedule a call
           </motion.a>
         </motion.div>
-
       </div>
     </header>
   );

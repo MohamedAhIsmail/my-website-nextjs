@@ -6,23 +6,20 @@ import { motion } from "framer-motion";
 import { Icon } from "./icons";
 
 const DOCK_ITEMS = [
-  { id: "top",        label: "Home",       icon: "home"       },
-  { id: "services",   label: "Services",   icon: "briefcase"  },
-  { id: "stack",      label: "Stack",      icon: "grid"       },
-  { id: "projects",   label: "Projects",   icon: "folder"     },
-  { id: "experience", label: "Experience", icon: "clock"      },
-  { id: "education",  label: "Education",  icon: "graduation" },
+  { id: "top", label: "Home", icon: "home" },
+  { id: "services", label: "Services", icon: "briefcase" },
+  { id: "stack", label: "Stack", icon: "grid" },
+  { id: "projects", label: "Projects", icon: "folder" },
+  { id: "experience", label: "Experience", icon: "clock" },
+  { id: "education", label: "Education", icon: "graduation" },
 ] as const;
 
 export function Dock() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted]     = useState(false);
-  const [active, setActive]       = useState("top");
-  const [hover, setHover]         = useState<string | null>(null);
-  const [bub, setBub]             = useState({ x: 0, y: 0, w: 0, h: 0, on: false });
+  const [active, setActive] = useState("top");
+  const [hover, setHover] = useState<string | null>(null);
+  const [bub, setBub] = useState({ x: 0, y: 0, w: 0, h: 0, on: false });
   const btnRefs = useRef<Record<string, HTMLElement | null>>({});
-
-  useEffect(() => { setMounted(true); }, []);
 
   /* scroll-spy */
   useEffect(() => {
@@ -34,7 +31,8 @@ export function Dock() {
         const el = document.getElementById(id);
         if (el && el.offsetTop <= mid) cur = id;
       }
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) cur = "contact";
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4)
+        cur = "contact";
       setActive(cur);
     };
     onScroll();
@@ -49,10 +47,17 @@ export function Dock() {
   /* bubble position */
   useEffect(() => {
     const place = () => {
-      const key = hover ?? (DOCK_ITEMS.some((d) => d.id === active) ? active : null);
+      const key =
+        hover ?? (DOCK_ITEMS.some((d) => d.id === active) ? active : null);
       const el = key ? btnRefs.current[key] : null;
       if (el) {
-        setBub({ x: el.offsetLeft, y: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight, on: true });
+        setBub({
+          x: el.offsetLeft,
+          y: el.offsetTop,
+          w: el.offsetWidth,
+          h: el.offsetHeight,
+          on: true,
+        });
       } else {
         setBub((b) => ({ ...b, on: false }));
       }
@@ -60,27 +65,40 @@ export function Dock() {
     place();
     window.addEventListener("resize", place);
     const t = setTimeout(place, 300);
-    return () => { window.removeEventListener("resize", place); clearTimeout(t); };
+    return () => {
+      window.removeEventListener("resize", place);
+      clearTimeout(t);
+    };
   }, [hover, active]);
 
   const toggleTheme = useCallback(() => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   }, [resolvedTheme, setTheme]);
 
-  const isDark = !mounted || resolvedTheme === "dark";
+  const isDark = resolvedTheme !== "light";
 
   return (
-    <nav className="dock" aria-label="Primary" onMouseLeave={() => setHover(null)}>
+    <nav
+      className="dock"
+      aria-label="Primary"
+      onMouseLeave={() => setHover(null)}
+    >
       {/* Spring-animated bubble */}
       <motion.span
         className="dock-bubble"
         aria-hidden="true"
-        animate={{ x: bub.x, y: bub.y, width: bub.w, height: bub.h, opacity: bub.on ? 1 : 0 }}
+        animate={{
+          x: bub.x,
+          y: bub.y,
+          width: bub.w,
+          height: bub.h,
+          opacity: bub.on ? 1 : 0,
+        }}
         transition={{
-          x:       { type: "spring", stiffness: 500, damping: 35, mass: 0.5 },
-          y:       { type: "spring", stiffness: 500, damping: 35, mass: 0.5 },
-          width:   { type: "spring", stiffness: 500, damping: 35, mass: 0.5 },
-          height:  { duration: 0.25 },
+          x: { type: "spring", stiffness: 500, damping: 35, mass: 0.5 },
+          y: { type: "spring", stiffness: 500, damping: 35, mass: 0.5 },
+          width: { type: "spring", stiffness: 500, damping: 35, mass: 0.5 },
+          height: { duration: 0.25 },
           opacity: { duration: 0.2 },
         }}
       />
@@ -89,7 +107,9 @@ export function Dock() {
         <a
           key={d.id}
           href={"#" + d.id}
-          ref={(el) => { btnRefs.current[d.id] = el; }}
+          ref={(el) => {
+            btnRefs.current[d.id] = el;
+          }}
           onMouseEnter={() => setHover(d.id)}
           className={"dock-btn" + (active === d.id ? " active" : "")}
           data-tip={d.label}
@@ -103,7 +123,9 @@ export function Dock() {
 
       <button
         className="dock-btn"
-        ref={(el) => { btnRefs.current.theme = el; }}
+        ref={(el) => {
+          btnRefs.current.theme = el;
+        }}
         onMouseEnter={() => setHover("theme")}
         onClick={toggleTheme}
         data-tip={isDark ? "Light mode" : "Dark mode"}

@@ -11,7 +11,9 @@ export function Preloader() {
 
   useEffect(() => {
     document.body.classList.add("preloading");
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     const t = setTimeout(dismiss, reduce ? 400 : DURATION);
     return () => clearTimeout(t);
   }, []);
@@ -46,7 +48,6 @@ export function Preloader() {
           </motion.button>
 
           <div className="relative text-center px-6">
-
             {/* "I'm" — slides in from right */}
             <motion.span
               className="block font-mono text-primary tracking-[0.14em] text-sm mb-2.5"
@@ -96,7 +97,11 @@ export function Preloader() {
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 1 }}
                   transition={{
-                    pathLength: { duration: 1.3, ease: "easeInOut", delay: 1.7 },
+                    pathLength: {
+                      duration: 1.3,
+                      ease: "easeInOut",
+                      delay: 1.7,
+                    },
                     opacity: { duration: 0, delay: 1.7 },
                   }}
                 />

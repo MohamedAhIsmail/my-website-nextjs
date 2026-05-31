@@ -19,9 +19,10 @@ export function ScrollTop() {
     <motion.button
       aria-label="Scroll to top"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      animate={show
-        ? { opacity: 1, y: 0, scale: 1, pointerEvents: "auto" }
-        : { opacity: 0, y: 10, scale: 0.9, pointerEvents: "none" }
+      animate={
+        show
+          ? { opacity: 1, y: 0, scale: 1, pointerEvents: "auto" }
+          : { opacity: 0, y: 10, scale: 0.9, pointerEvents: "none" }
       }
       whileHover={show ? { y: -3, transition: hoverTransition } : {}}
       transition={{ duration: 0.2, ease: EASE }}

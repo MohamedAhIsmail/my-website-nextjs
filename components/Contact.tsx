@@ -16,9 +16,12 @@ export function Contact() {
         viewport={viewport}
       >
         <span className="eyebrow justify-center">Contact</span>
-        <h2 className="text-h1 font-[750] tracking-[-0.03em] mt-3.5 mb-0">Let&apos;s build something together</h2>
+        <h2 className="text-h1 font-[750] tracking-[-0.03em] mt-3.5 mb-0">
+          Let&apos;s build something together
+        </h2>
         <p className="text-muted-foreground text-body-lg max-w-[50ch] mx-auto mt-3.5 mb-0">
-          Have a project, a role, or just want to say hi? My inbox is always open.
+          Have a project, a role, or just want to say hi? My inbox is always
+          open.
         </p>
 
         {/* Primary CTA */}

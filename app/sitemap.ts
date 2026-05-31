@@ -4,10 +4,10 @@ import seo from "@/data/seo.json";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url:             seo.url,
-      lastModified:    new Date(),
+      url: seo.url,
+      lastModified: new Date(),
       changeFrequency: "monthly",
-      priority:        1,
+      priority: 1,
     },
   ];
 }

@@ -4,7 +4,12 @@ import type { MouseEvent } from "react";
 import { motion } from "framer-motion";
 import { FadeIn } from "./FadeIn";
 import { PORTFOLIO } from "@/lib/portfolio-data";
-import { staggerContainer, cardItem, viewport, hoverTransition } from "@/lib/motion";
+import {
+  staggerContainer,
+  cardItem,
+  viewport,
+  hoverTransition,
+} from "@/lib/motion";
 import { Icon } from "./icons";
 
 export function Services() {
@@ -18,9 +23,12 @@ export function Services() {
     <section className="section wrap" id="services">
       <FadeIn className="mb-10 max-w-160">
         <span className="eyebrow">Services</span>
-        <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-3.5 mb-0">What I can do for you</h2>
+        <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-3.5 mb-0">
+          What I can do for you
+        </h2>
         <p className="text-muted-foreground mt-3 mb-0 text-body-lg max-w-[56ch]">
-          End-to-end engineering, from the database to the pixels — pick a piece or the whole thing.
+          End-to-end engineering, from the database to the pixels — pick a piece
+          or the whole thing.
         </p>
       </FadeIn>
 
@@ -42,7 +50,9 @@ export function Services() {
             <div className="w-11.5 h-11.5 rounded-xl grid place-items-center bg-primary-soft text-primary border border-primary-line mb-4.5 [&_svg]:w-5.75 [&_svg]:h-5.75">
               <Icon name={s.icon as never} />
             </div>
-            <h3 className="text-h3 font-[650] tracking-[-0.01em] mt-0 mb-2">{s.title}</h3>
+            <h3 className="text-h3 font-[650] tracking-[-0.01em] mt-0 mb-2">
+              {s.title}
+            </h3>
             <p className="text-muted-foreground m-0 text-body">{s.desc}</p>
           </motion.article>
         ))}

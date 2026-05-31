@@ -3,7 +3,12 @@
 import { motion } from "framer-motion";
 import { FadeIn } from "./FadeIn";
 import { PORTFOLIO } from "@/lib/portfolio-data";
-import { staggerContainer, cardItem, viewport, hoverTransition } from "@/lib/motion";
+import {
+  staggerContainer,
+  cardItem,
+  viewport,
+  hoverTransition,
+} from "@/lib/motion";
 import { Icon } from "./icons";
 
 export function Certifications() {
@@ -11,9 +16,12 @@ export function Certifications() {
     <section className="section wrap" id="certifications">
       <FadeIn className="mb-10 max-w-160">
         <span className="eyebrow">Certifications</span>
-        <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-3.5 mb-0">Always learning</h2>
+        <h2 className="text-h2 font-bold tracking-[-0.02em] leading-[1.1] mt-3.5 mb-0">
+          Always learning
+        </h2>
         <p className="text-muted-foreground mt-3 mb-0 text-body-lg max-w-[56ch]">
-          Credentials that back up the work — placeholders for now, swap in your own anytime.
+          Credentials that back up the work — placeholders for now, swap in your
+          own anytime.
         </p>
       </FadeIn>
 
