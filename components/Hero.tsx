@@ -80,7 +80,7 @@ export function Hero() {
           {PORTFOLIO.about.map((p, i) => (
             <p
               key={i}
-              className="text-muted-foreground text-body leading-relaxed m-0"
+              className="text-muted-foreground text-body leading-relaxed m-0 text-justify"
             >
               {p}
             </p>
@@ -118,14 +118,14 @@ export function Hero() {
           <motion.a
             href="#projects"
             whileHover={{ y: -2, transition: hoverTransition }}
-            className="inline-flex items-center gap-2 font-medium text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap bg-primary text-primary-foreground transition-[background-color,color,box-shadow] duration-200 ease-out hover:bg-primary-strong [&_svg]:w-4 [&_svg]:h-4"
+            className="inline-flex items-center justify-center gap-2 font-medium text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap min-w-44 bg-primary text-primary-foreground transition-[background-color,color,box-shadow] duration-200 ease-out hover:bg-primary-strong [&_svg]:w-4 [&_svg]:h-4"
           >
             <Icon name="layers" /> View my work
           </motion.a>
           <motion.a
             href="#contact"
             whileHover={{ y: -2, transition: hoverTransition }}
-            className="inline-flex items-center gap-2 font-medium text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap bg-card text-foreground border border-border transition-[background-color,border-color,color] duration-200 ease-out hover:bg-accent hover:border-muted-foreground [&_svg]:w-4 [&_svg]:h-4"
+            className="inline-flex items-center justify-center gap-2 font-medium text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap min-w-44 bg-card text-foreground border border-border transition-[background-color,border-color,color] duration-200 ease-out hover:bg-accent hover:border-muted-foreground [&_svg]:w-4 [&_svg]:h-4"
           >
             <Icon name="calendar" /> Schedule a call
           </motion.a>
