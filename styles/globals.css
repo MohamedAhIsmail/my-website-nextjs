@@ -280,7 +280,7 @@ body {
    ============================================================ */
 .hive {
   --gap: clamp(6px, 1.6vw, 12px);
-  --hex-w: min(116px, (100vw - 44px - 4 * var(--gap)) / 5);
+  --hex-w: min(116px, (100vw - 44px - 5 * var(--gap)) / 6);
   --hex-h: calc(var(--hex-w) * 1.155);
   display: flex;
   flex-direction: column;

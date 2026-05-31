@@ -25,9 +25,10 @@ function Hex({ tech, delay }: { tech: TechItem; delay: number }) {
 
 export function Hive() {
   const rows = [
-    PORTFOLIO.tech.slice(0, 4),
-    PORTFOLIO.tech.slice(4, 9),
-    PORTFOLIO.tech.slice(9, 13),
+    PORTFOLIO.tech.slice(0, 5),
+    PORTFOLIO.tech.slice(5, 11),
+    PORTFOLIO.tech.slice(11, 16),
+    PORTFOLIO.tech.slice(16, 21),
   ];
 
   return (

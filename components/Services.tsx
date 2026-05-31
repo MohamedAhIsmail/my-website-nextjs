@@ -43,11 +43,6 @@ export function Services() {
             </div>
             <h3 className="text-h3 font-[650] tracking-[-0.01em] mt-0 mb-2">{s.title}</h3>
             <p className="text-muted-foreground m-0 text-body">{s.desc}</p>
-            <div className="flex flex-wrap gap-1.5 mt-4">
-              {s.tags.map((t) => (
-                <span key={t} className="font-mono text-caption text-muted-foreground bg-accent px-2 py-0.75 rounded-md">{t}</span>
-              ))}
-            </div>
           </motion.article>
         ))}
       </motion.div>
