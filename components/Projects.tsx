@@ -46,8 +46,8 @@ export function Projects() {
                 {p.tags.map((t) => <span key={t} className="font-mono text-[11px] text-muted-foreground bg-accent px-2 py-0.5 rounded-md">{t}</span>)}
               </div>
               <div className="flex gap-2 mt-3.5">
-                <a href={p.live} className="inline-flex items-center gap-1.5 text-sm font-medium text-primary no-underline hover:underline [&_svg]:w-[15px] [&_svg]:h-[15px]"><Icon name="external" /> Live</a>
-                <a href={p.code} className="inline-flex items-center gap-1.5 text-sm font-medium text-primary no-underline hover:underline [&_svg]:w-[15px] [&_svg]:h-[15px]"><Icon name="github" /> Code</a>
+                <a href={p.live} className="inline-flex items-center gap-1.5 text-sm font-medium text-primary no-underline hover:underline transition-opacity duration-150 hover:opacity-80 [&_svg]:w-3.75 [&_svg]:h-3.75"><Icon name="external" /> Live</a>
+                <a href={p.code} className="inline-flex items-center gap-1.5 text-sm font-medium text-primary no-underline hover:underline transition-opacity duration-150 hover:opacity-80 [&_svg]:w-3.75 [&_svg]:h-3.75"><Icon name="github" /> Code</a>
               </div>
             </div>
           </motion.article>

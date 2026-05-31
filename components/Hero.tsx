@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { PORTFOLIO } from "@/lib/portfolio-data";
-import { EASE, staggerContainer, cardItem } from "@/lib/motion";
+import { EASE, staggerContainer, cardItem, hoverTransition } from "@/lib/motion";
 import { Icon, SocialIcon } from "./icons";
 
 /* Each hero element slides up on page load */
@@ -48,17 +48,18 @@ export function Hero() {
 
         <motion.div className="flex gap-2.5 mt-5 justify-center" {...heroItem(0.26)}>
           {PORTFOLIO.socials.map((s) => (
-            <a
+            <motion.a
               key={s.id}
               href={s.href}
               aria-label={s.label}
               title={s.label}
               target={s.href.startsWith("#") || s.href.startsWith("mailto:") ? undefined : "_blank"}
               rel="noreferrer"
-              className="w-10 h-10 grid place-items-center rounded-[10px] border border-border bg-card text-muted-foreground transition-[color,border-color,transform,background-color] duration-150 hover:text-primary hover:border-primary-line hover:bg-primary-soft hover:-translate-y-0.5 [&_svg]:w-4.5 [&_svg]:h-4.5"
+              whileHover={{ y: -2, transition: hoverTransition }}
+              className="w-10 h-10 grid place-items-center rounded-[10px] border border-border bg-card text-muted-foreground transition-[color,border-color,background-color] duration-200 ease-out hover:text-primary hover:border-primary-line hover:bg-primary-soft [&_svg]:w-4.5 [&_svg]:h-4.5"
             >
               <SocialIcon icon={s.icon} />
-            </a>
+            </motion.a>
           ))}
         </motion.div>
 
@@ -91,18 +92,20 @@ export function Hero() {
         </motion.div>
 
         <motion.div className="flex flex-wrap gap-3 mt-7 justify-center" {...heroItem(0.55)}>
-          <a
+          <motion.a
             href="#projects"
-            className="inline-flex items-center gap-2 font-semibold text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap bg-primary text-primary-foreground transition-[transform,background-color] duration-150 hover:bg-primary-strong hover:-translate-y-px [&_svg]:w-4 [&_svg]:h-4"
+            whileHover={{ y: -2, transition: hoverTransition }}
+            className="inline-flex items-center gap-2 font-semibold text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap bg-primary text-primary-foreground transition-[background-color,color,box-shadow] duration-200 ease-out hover:bg-primary-strong [&_svg]:w-4 [&_svg]:h-4"
           >
             <Icon name="layers" /> View my work
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="#contact"
-            className="inline-flex items-center gap-2 font-semibold text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap bg-transparent text-foreground border border-border transition-[background-color,border-color] duration-150 hover:bg-accent hover:border-muted-foreground [&_svg]:w-4 [&_svg]:h-4"
+            whileHover={{ y: -2, transition: hoverTransition }}
+            className="inline-flex items-center gap-2 font-semibold text-body px-4.5 py-2.5 rounded-[10px] no-underline whitespace-nowrap bg-card text-foreground border border-border transition-[background-color,border-color,color] duration-200 ease-out hover:bg-accent hover:border-muted-foreground [&_svg]:w-4 [&_svg]:h-4"
           >
             <Icon name="calendar" /> Schedule a call
-          </a>
+          </motion.a>
         </motion.div>
 
       </div>

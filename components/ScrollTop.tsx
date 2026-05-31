@@ -25,7 +25,7 @@ export function ScrollTop() {
       }
       whileHover={show ? { y: -3, transition: hoverTransition } : {}}
       transition={{ duration: 0.2, ease: EASE }}
-      className="fixed bottom-6 right-6 z-65 size-9.5 rounded-full grid place-items-center bg-card text-foreground border border-border shadow-md cursor-pointer [&_svg]:size-4 transition-[background-color,border-color,color] duration-200 hover:bg-primary-soft hover:border-primary-line hover:text-primary max-[560px]:bottom-21 max-[560px]:right-4"
+      className="fixed bottom-6 right-6 z-65 size-9.5 rounded-full grid place-items-center bg-card text-foreground border border-border shadow-md cursor-pointer [&_svg]:size-4 transition-[background-color,border-color,color] duration-200 ease-out hover:bg-primary-soft hover:border-primary-line hover:text-primary max-[560px]:bottom-21 max-[560px]:right-4"
     >
       <Icon name="arrowUp" />
     </motion.button>

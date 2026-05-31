@@ -40,7 +40,7 @@ export function Preloader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.3, duration: 0.6 }}
-            className="absolute top-[22px] end-7 bg-transparent border-0 cursor-pointer font-mono text-sm text-muted-foreground tracking-[0.04em] px-2.5 py-1.5 rounded-lg hover:text-primary hover:bg-primary-soft transition-colors"
+            className="absolute top-[22px] end-7 bg-transparent border-0 cursor-pointer font-mono text-sm text-muted-foreground tracking-[0.04em] px-2.5 py-1.5 rounded-lg hover:text-primary hover:bg-primary-soft transition-[color,background-color] duration-200 ease-out"
           >
             Skip
           </motion.button>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { PORTFOLIO } from "@/lib/portfolio-data";
-import { fadeUp, viewport } from "@/lib/motion";
+import { fadeUp, viewport, hoverTransition } from "@/lib/motion";
 import { Icon } from "./icons";
 
 export function Contact() {
@@ -23,34 +23,37 @@ export function Contact() {
 
         {/* Primary CTA */}
         <div className="flex justify-center mt-7.5 relative z-1">
-          <a
+          <motion.a
             href={`mailto:${PORTFOLIO.email}`}
-            className="inline-flex items-center gap-2 font-semibold text-body px-4.5 py-2.5 rounded-[10px] no-underline bg-primary text-primary-foreground transition-[transform,background-color] duration-150 hover:bg-primary-strong hover:-translate-y-px [&_svg]:w-4 [&_svg]:h-4"
+            whileHover={{ y: -2, transition: hoverTransition }}
+            className="inline-flex items-center gap-2 font-semibold text-body px-4.5 py-2.5 rounded-[10px] no-underline bg-primary text-primary-foreground transition-[background-color,color,box-shadow] duration-200 ease-out hover:bg-primary-strong [&_svg]:w-4 [&_svg]:h-4"
           >
             <Icon name="mail" /> Contact me
-          </a>
+          </motion.a>
         </div>
 
         {/* Social icons */}
-        <div className="flex justify-center gap-3 mt-4 relative z-[1]">
-          <a
+        <div className="flex justify-center gap-3 mt-4 relative z-1">
+          <motion.a
             href={PORTFOLIO.socials[0].href}
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="w-10 h-10 grid place-items-center rounded-[10px] border border-border bg-card text-muted-foreground transition-[color,border-color,background-color,transform] duration-150 hover:text-primary hover:border-primary-line hover:bg-primary-soft hover:-translate-y-0.5 [&_svg]:w-4.5 [&_svg]:h-4.5"
+            whileHover={{ y: -2, transition: hoverTransition }}
+            className="w-10 h-10 grid place-items-center rounded-[10px] border border-border bg-card text-muted-foreground transition-[color,border-color,background-color] duration-200 ease-out hover:text-primary hover:border-primary-line hover:bg-primary-soft [&_svg]:w-4.5 [&_svg]:h-4.5"
           >
             <Icon name="github" />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href={PORTFOLIO.socials[1].href}
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="w-10 h-10 grid place-items-center rounded-[10px] border border-border bg-card text-muted-foreground transition-[color,border-color,background-color,transform] duration-150 hover:text-primary hover:border-primary-line hover:bg-primary-soft hover:-translate-y-0.5 [&_svg]:w-4.5 [&_svg]:h-4.5"
+            whileHover={{ y: -2, transition: hoverTransition }}
+            className="w-10 h-10 grid place-items-center rounded-[10px] border border-border bg-card text-muted-foreground transition-[color,border-color,background-color] duration-200 ease-out hover:text-primary hover:border-primary-line hover:bg-primary-soft [&_svg]:w-4.5 [&_svg]:h-4.5"
           >
             <Icon name="linkedin" />
-          </a>
+          </motion.a>
         </div>
       </motion.div>
     </section>
