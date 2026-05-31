@@ -310,7 +310,7 @@ body {
   inset: 0;
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   background: var(--border);
-  transition: background-color 0.22s ease;
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .hex-inner {
   position: absolute;
@@ -324,13 +324,13 @@ body {
   gap: 7px;
   transition:
     transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.22s ease;
+    background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .hex .tech-ic {
   width: clamp(26px, calc(var(--hex-w) * 0.36), 38px);
   height: clamp(26px, calc(var(--hex-w) * 0.36), 38px);
   object-fit: contain;
-  transition: transform 0.22s ease;
+  transition: transform 0.22s ease, filter 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .dark .hex .tech-ic {
   filter: brightness(0) invert(1);
@@ -342,15 +342,14 @@ body {
   letter-spacing: -0.01em;
   text-align: center;
   padding-inline: 4px;
-  transition: color 0.22s ease;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
-/* Hover: scale hex, fill with primary */
-.hex:hover .hex-inner { transform: scale(1.04); background: var(--primary); }
+/* Hover: smooth bg fill, border, icon, label */
+.hex:hover .hex-inner { background: var(--primary); }
 .hex:hover::before    { background: var(--primary); }
-/* On hover: turn icon white for contrast against sand fill */
-.hex:hover .tech-ic   { transform: translateY(-1px) scale(1.08); filter: brightness(0) invert(1); transition: transform 0.22s ease, filter 0.18s ease; }
+.hex:hover .tech-ic   { filter: brightness(0) invert(1); }
 .hex:hover .tech-label { color: #fff; }
-/* Dark mode hover: soft fill (icon is already white) */
+/* Dark mode hover: soft fill */
 .dark .hex:hover .hex-inner { background: var(--primary-soft); }
 .dark .hex:hover .tech-ic   { filter: brightness(0) invert(1); }
 
