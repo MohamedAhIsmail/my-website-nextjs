@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { FadeIn } from "./FadeIn";
 import { PORTFOLIO } from "@/lib/portfolio-data";
-import { staggerContainer, cardItem, viewport } from "@/lib/motion";
+import { staggerContainer, cardItem, viewport, hoverTransition } from "@/lib/motion";
 import { Icon } from "./icons";
 
 export function Certifications() {
@@ -29,7 +29,8 @@ export function Certifications() {
           <motion.div
             key={c.t}
             variants={cardItem}
-            className="flex items-center gap-3.5 border border-border bg-card rounded-xl px-4 py-3.5 transition-[border-color,transform] duration-180 hover:border-primary-line hover:translate-x-0.75"
+            whileHover={{ x: 3, transition: hoverTransition }}
+            className="flex items-center gap-3.5 border border-border bg-card rounded-xl px-4 py-3.5 transition-[border-color] duration-300 hover:border-primary-line"
           >
             <span className="w-10 h-10 rounded-[10px] grid place-items-center shrink-0 bg-primary-soft text-primary border border-primary-line [&_svg]:w-5 [&_svg]:h-5">
               <Icon name="award" />

@@ -247,10 +247,7 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition:
-    border-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .service-card::after {
   content: "";
@@ -267,7 +264,6 @@ body {
   transition: opacity 0.3s ease;
 }
 .service-card:hover {
-  transform: translateY(-3px);
   border-color: var(--primary-line);
   box-shadow: var(--shadow-md);
 }
@@ -279,12 +275,18 @@ body {
    Honeycomb (clip-path — cannot be Tailwind)
    ============================================================ */
 .hive {
-  --gap: clamp(6px, 1.6vw, 12px);
+  --gap: clamp(5px, 1.4vw, 12px);
   --hex-w: min(116px, (100vw - 44px - 5 * var(--gap)) / 6);
   --hex-h: calc(var(--hex-w) * 1.155);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 500px) {
+  .hive {
+    --gap: 5px;
+    --hex-w: min(82px, (100vw - 32px - 3 * var(--gap)) / 4);
+  }
 }
 .hive-row {
   display: flex;
@@ -326,8 +328,8 @@ body {
     background-color 0.22s ease;
 }
 .hex .tech-ic {
-  width: clamp(24px, 6.5vw, 36px);
-  height: clamp(24px, 6.5vw, 36px);
+  width: clamp(26px, calc(var(--hex-w) * 0.36), 38px);
+  height: clamp(26px, calc(var(--hex-w) * 0.36), 38px);
   object-fit: contain;
   filter: brightness(0) invert(0.16);
   transition: transform 0.22s ease;
@@ -336,7 +338,7 @@ body {
   filter: brightness(0) invert(1);
 }
 .hex .tech-label {
-  font-size: clamp(8px, 2.4vw, 10.5px);
+  font-size: clamp(9px, calc(var(--hex-w) * 0.13), 11px);
   font-weight: 600;
   color: var(--foreground);
   letter-spacing: -0.01em;
@@ -441,9 +443,7 @@ body {
   gap: 2px;
   padding: 5px;
   border-radius: 999px;
-  background: color-mix(in oklch, var(--card) 85%, transparent);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: var(--card);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
   max-width: calc(100vw - 20px);

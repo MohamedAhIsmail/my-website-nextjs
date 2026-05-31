@@ -8,9 +8,9 @@ import { Icon, SocialIcon } from "./icons";
 /* Each hero element slides up on page load */
 function heroItem(delay: number) {
   return {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: 14 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: EASE, delay },
+    transition: { duration: 0.5, ease: EASE, delay },
   };
 }
 

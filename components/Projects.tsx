@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { FadeIn } from "./FadeIn";
 import { PORTFOLIO } from "@/lib/portfolio-data";
-import { staggerContainer, cardItem, viewport } from "@/lib/motion";
+import { staggerContainer, cardItem, viewport, hoverTransition } from "@/lib/motion";
 import { Icon } from "./icons";
 
 export function Projects() {
@@ -29,7 +29,8 @@ export function Projects() {
           <motion.article
             key={p.name}
             variants={cardItem}
-            className="border border-border bg-card rounded-2xl overflow-hidden flex flex-col shadow-sm transition-[transform,border-color,box-shadow] duration-200 hover:-translate-y-1 hover:border-primary-line hover:shadow-md"
+            whileHover={{ y: -4, transition: hoverTransition }}
+            className="border border-border bg-card rounded-2xl overflow-hidden flex flex-col shadow-sm transition-[border-color,box-shadow] duration-300 hover:border-primary-line hover:shadow-md"
           >
             <div className="aspect-[16/10] relative overflow-hidden m-3.5 mb-0 rounded-xl border border-border bg-gradient-to-br from-background-2 to-card grid place-items-center">
               <span className="absolute inset-0 opacity-50 [background-image:radial-gradient(var(--primary-line)_1px,transparent_1px)] [background-size:18px_18px]" />

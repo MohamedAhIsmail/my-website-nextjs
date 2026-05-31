@@ -4,7 +4,7 @@ import type { MouseEvent } from "react";
 import { motion } from "framer-motion";
 import { FadeIn } from "./FadeIn";
 import { PORTFOLIO } from "@/lib/portfolio-data";
-import { staggerContainer, cardItem, viewport } from "@/lib/motion";
+import { staggerContainer, cardItem, viewport, hoverTransition } from "@/lib/motion";
 import { Icon } from "./icons";
 
 export function Services() {
@@ -35,6 +35,7 @@ export function Services() {
           <motion.article
             key={s.title}
             variants={cardItem}
+            whileHover={{ y: -3, transition: hoverTransition }}
             className="service-card"
             onMouseMove={onMove}
           >

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FadeIn } from "./FadeIn";
 import { PORTFOLIO, getIconUrl, type TechItem } from "@/lib/portfolio-data";
@@ -12,7 +13,7 @@ function Hex({ tech, delay }: { tech: TechItem; delay: number }) {
       initial={{ opacity: 0, scale: 0.35, y: 18 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true, amount: 0 }}
-      transition={{ type: "spring", stiffness: 220, damping: 18, delay: delay / 1000 }}
+      transition={{ type: "spring", stiffness: 280, damping: 24, delay: delay / 1000 }}
     >
       <div className="hex-inner">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -23,13 +24,33 @@ function Hex({ tech, delay }: { tech: TechItem; delay: number }) {
   );
 }
 
+const DESKTOP_ROWS = [
+  PORTFOLIO.tech.slice(0, 5),
+  PORTFOLIO.tech.slice(5, 11),
+  PORTFOLIO.tech.slice(11, 16),
+  PORTFOLIO.tech.slice(16, 21),
+];
+
+const MOBILE_ROWS = [
+  PORTFOLIO.tech.slice(0, 3),
+  PORTFOLIO.tech.slice(3, 7),
+  PORTFOLIO.tech.slice(7, 10),
+  PORTFOLIO.tech.slice(10, 14),
+  PORTFOLIO.tech.slice(14, 17),
+  PORTFOLIO.tech.slice(17, 21),
+];
+
 export function Hive() {
-  const rows = [
-    PORTFOLIO.tech.slice(0, 5),
-    PORTFOLIO.tech.slice(5, 11),
-    PORTFOLIO.tech.slice(11, 16),
-    PORTFOLIO.tech.slice(16, 21),
-  ];
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 500);
+    check();
+    window.addEventListener("resize", check, { passive: true });
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const rows = isMobile ? MOBILE_ROWS : DESKTOP_ROWS;
 
   return (
     <section className="section wrap" id="stack">
@@ -48,8 +69,7 @@ export function Hive() {
               {row.map((t, ci) => {
                 const center = (row.length - 1) / 2;
                 const dist = Math.abs(ci - center);
-                const rowDelay = ri === 1 ? 0 : 110;
-                const delay = Math.round(rowDelay + dist * 60);
+                const delay = Math.round(ri * 70 + dist * 50);
                 return <Hex key={t.name} tech={t} delay={delay} />;
               })}
             </div>
