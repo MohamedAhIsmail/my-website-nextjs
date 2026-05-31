@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(seo.url),
 
   title: {
-    default:  seo.title,
+    default: seo.title,
     template: `%s | ${profile.name}`,
   },
 
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: seo.url,
     siteName: profile.name,
-    title:       seo.title,
+    title: seo.title,
     description: seo.description,
     images: [
       {
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
   },
 
   twitter: {
-    card:        "summary_large_image",
-    title:       seo.title,
+    card: "summary_large_image",
+    title: seo.title,
     description: seo.description,
     creator: seo.twitterHandle,
     images: [seo.ogImage],
